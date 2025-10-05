@@ -52,3 +52,12 @@ FROM siswa s
 JOIN nilai n ON s.id = n.siswa_id
 GROUP BY s.id, s.nama
 ORDER BY s.id;
+
+--memperbarui data siswa
+UPDATE siswa
+SET jurusan = 'Bahasa'
+WHERE id = 2;
+
+-- hapus satu data nilai siswa 
+DELETE FROM nilai
+WHERE siswa_id = 2 AND mata_pelajaran = 'Matematika';
