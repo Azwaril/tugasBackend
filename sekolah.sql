@@ -39,3 +39,16 @@ INSERT INTO public.nilai (siswa_id,mata_pelajaran,nilai) VALUES
 	 (5,'Matematika',80),
 	 (5,'Bahasa Indonesia',83),
 	 (5,'Bahasa Inggris',79);
+
+--menampilkan semua siswa
+SELECT * FROM siswa;
+
+--menampilkan siswa berdasarkan jurusan ipa
+SELECT nama, jurusan FROM siswa WHERE jurusan = 'IPA';
+
+--Menampilkan nilai rata-rata tiap siswa menggunakan join dan group by
+SELECT s.id, s.nama, AVG(n.nilai) AS rata_nilai
+FROM siswa s
+JOIN nilai n ON s.id = n.siswa_id
+GROUP BY s.id, s.nama
+ORDER BY s.id;
